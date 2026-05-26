@@ -1,86 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Primera Web</title>
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f4f4f4;
-      margin:0;
-      padding:40px;
-    }
-
-    .contenedor{
-      background:white;
-      max-width:800px;
-      margin:auto;
-      padding:20px;
-      border-radius:10px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
-
-    h1{
-      text-align:center;
-      color:#333;
-    }
-
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:20px;
-    }
-
-    th{
-      background:#0077ff;
-      color:white;
-      padding:10px;
-    }
-
-    td{
-      padding:10px;
-      border-bottom:1px solid #ddd;
-      text-align:center;
-    }
-
-    tr:hover{
-      background:#f0f0f0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="contenedor">
-    <h1>Tabla HTML</h1>
-
-    <table>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-        <th>Ciudad</th>
-      </tr>
-
-      <tr>
-        <td>Juan</td>
-        <td>20</td>
-        <td>Lima</td>
-      </tr>
-
-      <tr>
-        <td>Ana</td>
-        <td>22</td>
-        <td>Cusco</td>
-      </tr>
-
-      <tr>
-        <td>Luis</td>
-        <td>25</td>
-        <td>Arequipa</td>
-      </tr>
-    </table>
-  </div>
-
+    <header>
+        <h1>Mi Dashboard</h1>
+    </header>
+    <main class="contenedor">
+        <section class="cards">
+            <div class="card">
+                <h2>Usuarios</h2>
+                <p>124</p>
+            </div>
+            <div class="card">
+                <h2>Ventas</h2>
+                <p>$8,540</p>
+            </div>
+            <div class="card">
+                <h2>Visitas</h2>
+                <p>12K</p>
+            </div>
+        </section>
+        <section class="tabla-contenedor">
+            <div class="barra">
+                <input 
+                    type="text" 
+                    id="buscador"
+                    placeholder="Buscar..."
+                >
+                <button onclick="agregarFila()">
+                    Agregar
+                </button>
+            </div>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan</td>
+                        <td>20</td>
+                        <td>Lima</td>
+                    </tr>
+                    <tr>
+                        <td>Ana</td>
+                        <td>22</td>
+                        <td>Cusco</td>
+                    </tr>
+                    <tr>
+                        <td>Luis</td>
+                        <td>25</td>
+                        <td>Arequipa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        test
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
