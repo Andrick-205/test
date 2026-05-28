@@ -1,37 +1,37 @@
-const buscador = document.getElementById("buscador");
+// DARK MODE
 
-buscador.addEventListener("keyup", function(){
+const toggle = document.getElementById("themeToggle");
 
-    const texto = buscador.value.toLowerCase();
+toggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
 
-    const filas = document.querySelectorAll("#tabla tbody tr");
-
-    filas.forEach(fila => {
-
-        const contenido = fila.textContent.toLowerCase();
-
-        if(contenido.includes(texto)){
-            fila.style.display = "";
-        }else{
-            fila.style.display = "none";
-        }
-
-    });
-
+  if(document.body.classList.contains("dark")){
+    toggle.innerHTML = "☀";
+  }else{
+    toggle.innerHTML = "🌙";
+  }
 });
 
-function agregarFila(){
 
-    const tbody = document.querySelector("#tabla tbody");
+// CHART
 
-    const fila = document.createElement("tr");
+const ctx = document.getElementById('salesChart');
 
-    fila.innerHTML = `
-        <td>Nuevo</td>
-        <td>18</td>
-        <td>Perú</td>
-    `;
-
-    tbody.appendChild(fila);
-
-}
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+    datasets: [{
+      label: 'Ventas',
+      data: [1200, 1900, 3000, 2500, 4200, 5000],
+      borderWidth: 3,
+      borderColor: '#2563eb',
+      backgroundColor: 'rgba(37,99,235,0.2)',
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    responsive:true
+  }
+});
